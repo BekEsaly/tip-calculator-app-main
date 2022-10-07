@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+:root{
+ /*Primary*/
+--strongCyan: hsl(172, 67%, 45%);
+
+/*Neutral*/
+--veryDarkCyan: hsl(183, 100%, 15%);
+--darkGrayishCyan: hsl(186, 14%, 43%);
+--grayishCyan: hsl(184, 14%, 56%);
+--lightGrayishCyan: hsl(185, 41%, 84%);
+--veryLightGrayishCyan: hsl(189, 41%, 97%);
+--white: hsl(0, 0%, 100%);
+}
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+    font-family: 'Space Mono', monospace;
+    background-color: var(--lightGrayishCyan);
+}
+
+.logo{
+    z-index: 100;
+}
+.tip-calculator{
+   
+    height:calc(100vh-50%);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+   display: grid;
+   grid-template-columns: repeat(2, 25rem); ;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    margin:1rem auto;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 0.825rem;
+    color: var(--darkGrayishCyan);
+    margin-bottom: 0.5rem;
+}
+
+.bill-number{
+   background: url('./images/icon-dollar.svg') no-repeat center left 5%;
+}
+.people-number{
+   background: url('./images/icon-person.svg') no-repeat  center left 5%;
+}
+input{
+    background-color: var(--veryLightGrayishCyan);
+    color:var(--veryDarkCyan);
+    border: none;
+    font-family: inherit; 
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem ;
+    transition: border-color 0.15s ease-in-out;
+    margin-bottom: 1rem;
+    text-align: right;
+    outline:none;
+}
+input:focus{
+    border: 3px solid var(--strongCyan);
+}
+
+.tips{
+    display: grid;
+    grid-template-columns: repeat(3, 6.5rem);
+    gap: 1rem;
+    justify-content: space-between
+}
+.tips label{
+    text-align: center;
+    background-color: var(--veryDarkCyan);
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 0.4rem;
+}
+.tips label:hover{
+    background-color: var(--strongCyan);
+}
+.custom::placeholder{
+    color: var(--darkGrayishCyan);
+}
+.custom{
+    color: var(--darkGrayishCyan);
+    display: inline;
+}
+.msg{
+    display: flex;
+    justify-content: space-between;
+}
+.mistake{
+    color:red;
+    display: none;
+}
+.red-border{
+    border:3px solid red;
+}
+.output-box{
+    padding: 2rem;
+    border-radius: 0.6rem;
+    background-color: var(--veryDarkCyan);
+}
+.tip-amount, .total-amount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tip-amount{
+    margin-bottom: 2rem;
+}
+.amount-person p{
+    color: var(--white);
+    font-size: 0.825rem;
+    white-space: nowrap;
+}
+span{
+    color: var(--grayishCyan);
+    font-size: 0.7rem;
+}
+.amount{
+    color: var(--strongCyan);
+    font-size: 2rem;
+}
+.btn{
+    width: 100%;
+    padding: 0.7rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 0.6rem;
+    border: none;
+    background-color: var(--darkGrayishCyan);
+    color: var(--veryDarkCyan);
+    margin-top: 8rem;
+    text-transform: uppercase;
+}
+.btn:hover{
+    background-color: var(--strongCyan);
+}
+@media (min-width:265px) and (max-width:500px){
+ body{
+     margin: 4rem auto;
+ }
+    .tip-calculator{
+       grid-template-columns: repeat(1, 2fr);
+       height: 100%;
+       gap: 0.5rem;
+      
+    }
+    .tips{
+        grid-template-columns: repeat(2, 8.5rem);
+    }
+    
+    .total-amount{
+    margin-bottom: 1rem;
+}
+    input{
+        margin-bottom: 0.5rem;
+    }
+    .btn{
+        margin-top: 1rem;
+    }
+}
